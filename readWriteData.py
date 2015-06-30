@@ -12,6 +12,6 @@ for file in glob.glob("*.rtf"):
 	end_line = open(file).readlines()[-1]
 
 	print(first_line[14:21])
-	print(end_line)
+	print(end_line[1:5])
 	new_file.write(file + " " + first_line + " " + end_line + "\n")
 new_file.close()
