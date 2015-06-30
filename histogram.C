@@ -11,7 +11,10 @@ void histogram() {
 	TTree *Tree = new TTree("ntuple", "data from file");
 					
 	Tree->ReadFile(Form("/users/ronnie/git/Journal-Analysis/data.txt"), "month:date:day:words");
- 	Tree->Draw("day:words");
+	graph = new TGraph(170, &day, &words);
+	graph->Draw("A");
+//	Tree->Draw("day:words");
+//	Tree->Fit("day", "words");
 	Tree->Write();
 	
 }
