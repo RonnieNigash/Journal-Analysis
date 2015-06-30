@@ -1,4 +1,6 @@
 import glob, os
-os.chdir("Daily Journals");
+os.chdir("Daily Journals")
 for file in glob.glob("*.rtf"):
-    print(file)
+	print(file)
+	end_line = open(file).readlines()[-1]
+	print(end_line)
