@@ -13,6 +13,6 @@ for file in glob.glob("*.rtf"):
 
 	print(first_line)
 	print(end_line)
-	# Formats: "Date Day Words"
-	new_file.write(file[5:-4] + " " + first_line + " " + end_line + "\n")
+	# Format: "Month Date Day Words"
+	new_file.write(file[5:-10] + " " + first_line[4:8] + " " + end_line + "\n")
 new_file.close()
