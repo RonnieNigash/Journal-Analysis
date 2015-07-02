@@ -26,7 +26,7 @@ for file in glob.glob("*.rtf"):
 	month = month_dict[month] # Integer of 1, 2, ..., 12
 	print(month)
 
-	# Format: "Month Day Words" -> All integers concatenated to string
-	new_file.write(str(month) + " " + day_count + " " + end_line + "\n")
+	# Format: "Month Date Day Words" -> All integers concatenated to string
+	new_file.write(str(month) + " " + date + " " +  day_count + " " + end_line + "\n")
 
 new_file.close()
