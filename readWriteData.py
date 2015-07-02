@@ -20,7 +20,7 @@ for file in glob.glob("*.rtf"):
 	# Last index -> [-1]
 	end_line = open(file).readlines()[-1][1:5]
 
-	print(first_line)
+	print(day_count)
 	print(end_line)
 
 	# Format Date
