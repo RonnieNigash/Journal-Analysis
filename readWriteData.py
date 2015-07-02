@@ -6,12 +6,12 @@ new_file.write("#month date day words\n")
 for file in glob.glob("*.rtf"):
 	print(file)
 	# First line is of format: "Day XXX" 
-	# Found in index 7 of readlines
+	# Found in index 6 or 7 of readlines
 	first_line = open(file).readlines()[7][14:21]
 	day_count = first_line[4:8]
 	# If we don't have a value (first few words of journal due to formatting of .rtf)
 	if not day_count.isdigit():
-		first_line = open(file).readlines()[6][14:21] # Read the line before and sanitize correctly
+		first_line = open(file).readlines()[6].replace("\n", "")#[14:21] # Read the line before and sanitize correctly
 		day_count = first_line[4:8]
 
 	day_count = day_count.replace("\\", "")
