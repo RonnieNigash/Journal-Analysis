@@ -13,6 +13,13 @@ for file in glob.glob("*.rtf"):
 
 	print(first_line)
 	print(end_line)
+	month = file[5:-10] # String
+	month_dict = {'Jan' : 1, 'Feb' : 2, 'Mar' : 3, 'Apr' : 4, 'May' : 5, 'June' : 6, 'July' : 7, 'Aug' : 8, 'Sep' : 9, 'Oct' : 10, 'Nov' : 11, 'Dec' : 12}
+	if month in month_dict:
+		month = month_dict.get(month)
+		print("The month # is: " + month)
 	# Format: "Month Date Day Words"
-	new_file.write(file[5:-10] + " " + first_line[4:8] + " " + end_line + "\n")
+#	new_file.write(file[5:-10] + " " + first_line[4:8] + " " + end_line + "\n")
+	new_file.write(month + " " + first_line[4:8] + " " + end_line + "\n")
+
 new_file.close()
