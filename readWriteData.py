@@ -13,12 +13,11 @@ for file in glob.glob("*.rtf"):
 
 	print(first_line)
 	print(end_line)
-	month = file[5:-12].strip() # String
+	month = file[5:-12].strip() # String of Jan, Feb, ..., Dec
 	month_dict = {"Jan" : 1, "Feb" : 2, "Mar" : 3, "Apr" : 4, "May" : 5, "June" : 6, "July" : 7, "Aug" : 8, "Sep" : 9, "Oct" : 10, "Nov" : 11, "Dec" : 12}
-	month = month_dict[month] # Integer
+	month = month_dict[month] # Integer of 1, 2, ..., 12
 	print(month)
-	# Format: "Month Date Day Words"
-#	new_file.write(file[5:-10] + " " + first_line[4:8] + " " + end_line + "\n")
+	# Format: "Month Date Day Words" -> All integers concatenated to string
 	new_file.write(str(month) + " " + first_line[4:8] + " " + end_line + "\n")
 
 new_file.close()
