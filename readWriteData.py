@@ -11,6 +11,12 @@ for file in glob.glob("*.rtf"):
 	first_line = open(file).readlines()[7][14:21]
 	day_count = first_line[4:8]
 	day_count = day_count.replace("\\", "")
+	# If we don't have a value (first few words of journal due to formatting of .rtf)
+	if not day_count.isdigit():
+		first_line = open(file).readlines()[6][14:21] # Read the line before and sanitize correctly
+		day_count = first_line[4:8]
+		day_count = day_count.replace("\\", "")
+
 	# End line is of format: "(XXXX words)"
 	# Last index -> [-1]
 	end_line = open(file).readlines()[-1][1:5]
