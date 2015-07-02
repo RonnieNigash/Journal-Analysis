@@ -6,6 +6,7 @@ for file in glob.glob("*.rtf"):
 	print(file)
 	# First line is of format: "Day XXX" 
 	# Found in index 7 of readlines
+	# @TODO Fix Bug here! Our .readlines()[7] is not always off, we are getting an off-by one error sometimes
 	first_line = open(file).readlines()[7][14:21]
 	day_count = first_line[4:8]
 	day_count = day_count.replace("\\", "")
