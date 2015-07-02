@@ -1,6 +1,7 @@
 import glob, os
 os.chdir("Daily Journals")
 new_file = open("data.txt", "w")
+new_file.write("#month date day words\n")
 
 for file in glob.glob("*.rtf"):
 	print(file)
