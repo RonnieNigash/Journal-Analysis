@@ -18,8 +18,8 @@ void histogram() {
 	Int_t numWords = 0;
 	TBranch *wordsBranch = Tree->GetBranch("words");
 	for(Int_t i = 0; i < numEntries; i++) {
-		wordsBranch->GetEvent(i);
-		numWords += &wordsBranch;	
+		Tree->GetEntry(i);
+		cout << GetValue() << endl;
 	}
 	// Draw the Tree (words vs. day) on canvas
 	Tree->Draw("words:day");
