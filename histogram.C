@@ -13,6 +13,12 @@ void histogram() {
 	Tree->ReadFile(Form("/users/ronnie/git/Journal-Analysis/Daily Journals/data.txt"), "month:date:day:words");
 	graph = new TGraph(180, &words, &day);
 //	graph->Draw("A");
+	Tree->Print();
+	Int_t numEvents = Tree->GetEntries();
+	Int_t numWords = 0;
+	for (Int_t i = 0; i < numEvents; i++) {
+		Tree->GetEvent();
+	}
 	Tree->Draw("words:day");
 //	Tree->Fit("day", "words");
 	Tree->Write();
