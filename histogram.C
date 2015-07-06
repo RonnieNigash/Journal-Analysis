@@ -12,7 +12,16 @@ void histogram() {
 					
 	Tree->ReadFile(Form("/users/ronnie/git/Journal-Analysis/Daily Journals/data.txt"), "month:date:day:words");
 	graph = new TGraph(180, &words, &day);
+	// Get the total number of words written and print out to CLI
 	Tree->Print();
+	Event *event = new Event();
 	Int_t numEvents = Tree->GetEntries();
+	Int_t numWords = 0;
+	Tbranch *wordsBranch = Tree->GetBranch("words");
+	for(Int_t i = 0; i < numEvents; i++) {
+		wordsBranch->GetEvent(i);
+		numWords += &wordsBranch;	
+	}
+	// Draw the Tree (words vs. day) on canvas
 	Tree->Draw("words:day");
 }
