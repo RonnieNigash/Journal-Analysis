@@ -14,10 +14,10 @@ void histogram() {
 	graph = new TGraph(180, &words, &day);
 	// Get the total number of words written and print out to CLI
 	Tree->Print();
-	Int_t numEvents = Tree->GetEntries();
+	Int_t numEntries = (Int_t)(Tree->GetEntries());
 	Int_t numWords = 0;
 	TBranch *wordsBranch = Tree->GetBranch("words");
-	for(Int_t i = 0; i < numEvents; i++) {
+	for(Int_t i = 0; i < numEntries; i++) {
 		wordsBranch->GetEvent(i);
 		numWords += &wordsBranch;	
 	}
