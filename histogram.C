@@ -11,16 +11,22 @@ void histogram() {
 	TTree *Tree = new TTree("ntuple", "data from file");
 					
 	Tree->ReadFile(Form("/users/ronnie/git/Journal-Analysis/Daily Journals/data.txt"), "month:date:day:words");
-	graph = new TGraph(180, &words, &day);
+	graph = new TGraph(200, &words, &day);
 	// Get the total number of words written and print out to CLI
 	Tree->Print();
 	Int_t numEntries = (Int_t)(Tree->GetEntries());
-	Int_t numWords = 0;
 	TBranch *wordsBranch = Tree->GetBranch("words");
 	for(Int_t i = 0; i < numEntries; i++) {
 		Tree->GetEntry(i, 0);
-//		cout << GetValue() << endl;
 	}
 	// Draw the Tree (words vs. day) on canvas
+	Tree->SetEstimate(Tree->GetEntries());
 	Tree->Draw("words:day");
+	// Have to loop back through drawn tree to get values and count number of words total
+	Float_t numWords = 0.0;
+	Double_t *array = Tree->GetV1();
+	for (Int_t i = 0; i < numEntries; i++) {
+		numWords += array[i];
+	}
+	cout << numWords << endl;
 }
