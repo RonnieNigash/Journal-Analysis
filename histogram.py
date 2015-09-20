@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pylab
 import sys, os
 
 data = np.loadtxt((sys.path[0] + "/Daily Journals/data.txt"), comments='#', skiprows=1, usecols=(2,3))
@@ -15,5 +16,10 @@ m, b = np.polyfit(days, words, 1)
 
 plt.plot(days, words, '.')
 plt.plot(days, m*days + b, '-')
+plt.xlabel('day', fontsize=20)
+plt.ylabel('words', fontsize=20)
+plt.autoscale(enable=True, axis=u'both', tight=False)
+plt.grid(False)
 
-plt.show()
+pylab.savefig('graph.png', bbox_inches='tight')
+#plt.show()
