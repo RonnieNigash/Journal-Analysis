@@ -2,5 +2,5 @@
 Looking at my progress with daily journals
 
 # Graph
-This (graph.gif) is generated using the CERN ROOT C++ Framework. 
-![graph.gif](https://raw.githubusercontent.com/RonnieNigash/Journal-Analysis/master/graph.gif)
+This (graph.png) is generated using the pyplot.
+![graph.png](https://raw.githubusercontent.com/RonnieNigash/Journal-Analysis/master/graph.png)
