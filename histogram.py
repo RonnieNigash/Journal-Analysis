@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pylab
 import sys, os
 
-data = np.loadtxt((sys.path[0] + "/Daily Journals/data.txt"), comments='#', skiprows=1, usecols=(2,3))
+data = np.loadtxt((sys.path[0] + "/data.txt"), comments='#', skiprows=1, usecols=(2,3))
 data = data.tolist()
 data.sort()
 
