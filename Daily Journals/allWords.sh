@@ -7,5 +7,5 @@ for f in *\ *; do mv "$f" "${f// /_}"; done
 for file in *.html *.rtf
 do
 	echo "Processing $file..."
-	cat $file >> fileContexts.txt
+	cat $file >> fileContents.txt
 done
